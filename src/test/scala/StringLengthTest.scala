@@ -41,12 +41,6 @@ class StringLengthTest extends FlatSpec with Matchers {
     totalLength should be (2)
   }
 
-  "A random list of strings" should "have correct length" in {
-    var totalLength = 0
-    for ( i <- 0 to 1000)
-
-
-  }
 
   def totalStringLength(myList: List[String]) = {
     myList.foldLeft(0)((accu, str) => accu + str.length)
