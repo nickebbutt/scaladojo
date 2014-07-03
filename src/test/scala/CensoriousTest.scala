@@ -26,7 +26,7 @@ class CensoriousTest extends FlatSpec with Matchers {
     replacement should be ("")
   }
 
-  "A null " should "return an empty String" in {
+  "A null " should "throw a NullPointerException" in {
     val censorious = new Censorious()
 
     val nilStr : String = null
