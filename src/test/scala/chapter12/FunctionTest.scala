@@ -24,11 +24,11 @@ class FunctionTest extends FlatSpec with Matchers {
 
   "factorial of 5" should "return 120" in {
 
-    def getFactorial(f : Int) : Int = {
+    val factorial = (f : Int) => {
       (1 to f).reduceLeft(_ * _)
     }
 
-    getFactorial(5) should equal(120)
+    factorial(5) should equal(120)
   }
 
 }
