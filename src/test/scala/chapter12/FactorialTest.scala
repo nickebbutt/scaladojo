@@ -8,7 +8,7 @@ import org.scalatest.{Matchers, FlatSpec}
 class FactorialTest extends FlatSpec with Matchers {
 
   val factorial = (f : Int) => {
-    if ( f < 0 ) throw UnsupportedOperationException
+    if ( f < 0 ) throw new IllegalArgumentException
     (1 to Math.max(1, f)).reduceLeft(_ * _)
   }
 
@@ -27,4 +27,6 @@ class FactorialTest extends FlatSpec with Matchers {
 //  "factorial of -5" should "throw UnsupportedOperationException" in {
 //    factorial(-5) should ))
 //  }
+
+
 }
