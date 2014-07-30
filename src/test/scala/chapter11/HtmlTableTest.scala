@@ -10,9 +10,9 @@ class HtmlTableTest extends FlatSpec with Matchers {
 
   class HtmlTable(htmlTokens: List[String]) {
 
-    def | (html : String) : HtmlTable = HtmlTable(htmlTokens ::: ("<td>" :: (html :: ("</td>" :: Nil))))
+    def | (html : String) : HtmlTable = HtmlTable(htmlTokens ::: ("<td>" :: html :: "</td>" :: Nil))
 
-    def || (html : String) : HtmlTable = HtmlTable(htmlTokens ::: ( "</tr><tr><td>" :: ( html :: ( "</td>" :: Nil))))
+    def || (html : String) : HtmlTable = HtmlTable(htmlTokens ::: ( "</tr><tr><td>" :: html :: "</td>" :: Nil))
 
     override def toString : String = (htmlTokens ::: ( "</tr></table>" :: Nil )).mkString
   }
